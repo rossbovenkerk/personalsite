@@ -1,0 +1,56 @@
+.window
+
+    position: absolute
+    left: 10%
+    top: 15%
+    z-index: 50
+    min-width: 50%
+    width: .7vh
+    min-height: 250px
+    height: .9vh
+
+
+
+
+    .window-title
+        background: rgb(67,135,223)
+        background: linear-gradient(180deg, rgba(67,135,223,1) 0%, rgba(38,100,223,1) 20%, rgba(39,93,227,1) 100%)
+        color: #fff
+        font-weight: bold
+        padding: 10px
+        cursor: move
+        border-radius: 10px 10px 0px 0
+        height: 20px
+
+        .window-controls
+          position: absolute
+          right: 10px
+          top: 10px
+
+          div
+            width: 22px
+            height: 22px
+            border: solid 0px red
+            display: inline-block
+            margin: 0 2px
+            cursor: pointer
+
+          div.window-minimize
+              background: transparent url('/assets/windowbuttons.png') no-repeat -0px 0px
+
+          div.window-maximize
+              background: transparent url('/assets/windowbuttons.png') no-repeat -23px 0px
+
+          div.window-close
+              background: transparent url('/assets/windowbuttons.png') no-repeat -45px 0px
+
+    .window-body
+        padding: 10px
+        border: 2px solid rgb(67,135,223)
+        background: #fff
+        max-height: 70vh
+        overflow-y: scroll
+
+
+
+

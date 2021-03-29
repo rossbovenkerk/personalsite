@@ -1,0 +1,25 @@
+<div class="applications">
+    <div *ngFor="let window of windows"
+        [class.selected]="window === selectedWindow"
+        >
+
+        <div class="shortcut" (click)="onSelect(window)">
+
+                <div [ngSwitch]="window.type">
+                <div  *ngSwitchCase="'doc'"     ><img src='/assets/microsoft-word-document-icon-8.jpg' /></div>
+                <div  *ngSwitchCase="'link'"     ><img src='/assets/ie6.png' /></div>
+                <div  *ngSwitchDefault            ></div>
+                </div>
+
+
+
+
+
+
+
+
+
+            {{window.title}}
+        </div>
+    </div>
+</div>

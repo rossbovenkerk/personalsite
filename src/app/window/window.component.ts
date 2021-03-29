@@ -1,0 +1,96 @@
+import { Component, OnInit, ViewChild, ElementRef, AfterViewInit } from '@angular/core';
+
+
+import {Window} from '../window';
+import { WINDOWS } from '../windows';
+import { ApplicationsModule } from '../applications/applications.module';
+
+import {ResumeComponent} from '../applications/resume/resume.component';
+import {LinkedinComponent} from '../applications/linkedin/linkedin.component';
+
+declare function dragElement(param1: string): any;
+// declare function dragElement(): any;
+
+@Component({
+  selector: 'app-window',
+  templateUrl: './window.component.html',
+  styleUrls: ['./window.component.sass']
+})
+
+export class WindowComponent implements OnInit, AfterViewInit {
+
+  windows = WINDOWS;
+  selectedWindow?: Window;
+  selectedWindowID = 0;
+
+  windowTitle: string;
+
+  // dynamicMessage = 'xxxxxxxxxxxxxxxxxxxxx';
+
+  // HTML ID of element spawned
+  windowID: string = 'window-' + new Date().valueOf().toString();
+
+  // Window is open
+  public isWindowOpen = false;
+
+  constructor() {
+    this.windowTitle = '';
+   }
+
+  // @ViewChild('window') w!: ElementRef;
+  ngOnInit(): void {
+    this.isWindowOpen = true;
+
+    // get the selected window and load
+    this.selectedWindow = this.windows.filter(w => w.id === this.selectedWindowID)[0];
+    if (this.selectedWindow) {
+      this.windowTitle = this.selectedWindow.title;
+    }
+
+
+  }
+
+  ngAfterViewInit(): void {
+    dragElement(this.windowID);
+
+  }
+
+  onSelect(w: Window): void {
+    // this.selectedWindow = w;
+    this.isWindowOpen = true;
+  }
+
+  onMinimize(): void {
+    console.log('min');
+  }
+
+  onMaximize(): void {
+    console.log('max');
+  }
+
+  onClose(): void {
+    console.log('close');
+    this.isWindowOpen = false;
+
+  }
+
+  get isOpen(): boolean {
+    return this.isWindowOpen;
+  }
+
+  set isOpen(val: boolean) {
+    this.isWindowOpen = val;
+  }
+
+
+
+
+  bsod(): void {
+    const e = document.getElementById('bsod');
+    if (e) {
+      e.style.display = 'block';
+    }
+
+  }
+
+}

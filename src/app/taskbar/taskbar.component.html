@@ -1,0 +1,15 @@
+<div class="taskbar">
+    <div class="start">
+        <div class="startbutton" (click)="toggleStartMenu()"><img src="/assets/clipart2400718.png" />Start</div>
+        <app-startmenu [showStart]="showStartMenu"></app-startmenu>
+    </div>
+    <div class="programtray"></div>
+    <div class="traybar">
+        <div class="trayicons">
+          <div class="network-activity {{isNetworkActivity ? 'on' : 'off'}}"  (click)="toggleNetworkActivity()"></div>
+        </div>
+        <div class="time">
+            {{currentdate | date:'h:mm a'}}
+        </div>
+    </div>
+</div>
