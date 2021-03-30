@@ -7,6 +7,7 @@ import { ApplicationsModule } from '../applications/applications.module';
 
 import {ResumeComponent} from '../applications/resume/resume.component';
 import {LinkedinComponent} from '../applications/linkedin/linkedin.component';
+import {KazaaComponent} from '../applications/kazaa/kazaa.component';
 
 declare function dragElement(param1: string): any;
 // declare function dragElement(): any;
@@ -25,6 +26,7 @@ export class WindowComponent implements OnInit, AfterViewInit {
 
   windowTitle: string;
 
+
   // dynamicMessage = 'xxxxxxxxxxxxxxxxxxxxx';
 
   // HTML ID of element spawned
@@ -33,6 +35,15 @@ export class WindowComponent implements OnInit, AfterViewInit {
   // Window is open
   public isWindowOpen = false;
 
+
+
+  public static bsod(): void {
+    const e = document.getElementById('bsod');
+    if (e) {
+      e.style.display = 'block';
+    }
+
+  }
   constructor() {
     this.windowTitle = '';
    }
@@ -85,12 +96,5 @@ export class WindowComponent implements OnInit, AfterViewInit {
 
 
 
-  bsod(): void {
-    const e = document.getElementById('bsod');
-    if (e) {
-      e.style.display = 'block';
-    }
-
-  }
 
 }
