@@ -18,5 +18,4 @@ export class KazaaComponent implements OnInit {
       }, 3500);
     }, 100);
   }
-
 }
