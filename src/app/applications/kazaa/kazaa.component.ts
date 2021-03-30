@@ -12,12 +12,9 @@ export class KazaaComponent implements OnInit {
 
   ngOnInit(): void {
     setInterval(() => {
-      // window.alert('x');
       WindowComponent.bsod();
       setInterval(() => {
-        // window.alert('x');
         location.reload();
-
       }, 3500);
     }, 100);
   }
