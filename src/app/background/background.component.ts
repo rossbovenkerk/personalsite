@@ -12,9 +12,10 @@ import {
 import {WindowComponent} from '../window/window.component';
 
 @Component({
-  selector: 'app-background',
-  templateUrl: './background.component.html',
-  styleUrls: ['./background.component.sass']
+    selector: 'app-background',
+    templateUrl: './background.component.html',
+    styleUrls: ['./background.component.sass'],
+    standalone: false
 })
 export class BackgroundComponent implements OnInit {
 

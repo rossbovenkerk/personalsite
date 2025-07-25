@@ -3,5 +3,6 @@ export interface Window {
     type: string;
     title: string;
     content: string;
+    cssClass?: string;
     isOpen?: boolean;
   }

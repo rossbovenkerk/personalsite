@@ -1,22 +1,27 @@
-
-
-<div class="window" id="{{ windowID }}" *ngIf="isWindowOpen" >
+@if (isWindowOpen) {
+  <div class="window {{ cssClass }}" id="{{ windowID }}" >
     <div class="window-title">
-        {{ windowTitle }}
-        <div class="window-controls">
-          <div class="window-minimize"(click)="onMinimize()"></div>
-          <div class="window-maximize" (click)="onMaximize()"></div>
-          <div class="window-close" (click)="onClose()"></div>
-
-        </div>
+      {{ windowTitle }}
+      <div class="window-controls">
+        <div class="window-minimize"(click)="onMinimize()"></div>
+        <div class="window-maximize" (click)="onMaximize()"></div>
+        <div class="window-close" (click)="onClose()"></div>
+      </div>
     </div>
-
-
     <div class="window-body">
-        <app-resume *ngIf="selectedWindow && selectedWindow.id == 1"></app-resume>
-        <app-linkedin *ngIf="selectedWindow && selectedWindow.id == 2"></app-linkedin>
-        <app-notepad *ngIf="selectedWindow && selectedWindow.id == 3"></app-notepad>
-        <app-kazaa *ngIf="selectedWindow && selectedWindow.id == 5"></app-kazaa>
+      @if (selectedWindow && selectedWindow.id == 1) {
+        <app-resume></app-resume>
+      }
+      @if (selectedWindow && selectedWindow.id == 2) {
+        <app-linkedin></app-linkedin>
+      }
+      @if (selectedWindow && selectedWindow.id == 3) {
+        <app-notepad></app-notepad>
+      }
+      @if (selectedWindow && selectedWindow.id == 5) {
+        <app-kazaa></app-kazaa>
+      }
     </div>
-</div>
+  </div>
+}
 

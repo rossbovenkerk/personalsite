@@ -1,28 +1,30 @@
 <div class="applications">
-    <div *ngFor="let window of windows"
-        [class.selected]="window === selectedWindow"
-        >
-
-        <div class="shortcut" (click)="onSelect(window)">
-
-                <div [ngSwitch]="window.type">
-                <div  *ngSwitchCase="'doc'"     ><img src='/assets/microsoft-word-document-icon-8.jpg' /></div>
-                <div  *ngSwitchCase="'link'"     ><img src='/assets/ie6.png' /></div>
-                <div  *ngSwitchCase="'notepad'"     ><img src='/assets/Icon7.png' /></div>
-                <div  *ngSwitchCase="'kazaa'"     ><img src='/assets/kazaa.png' /></div>
-
-                <div  *ngSwitchDefault            ></div>
-                </div>
-
-
-
-
-
-
-
-
-
-            {{window.title}}
+  @for (window of windows; track window) {
+    <div
+      [class.selected]="window === selectedWindow"
+      >
+      <div class="shortcut" (click)="onSelect(window)">
+        <div>
+          @switch (window.type) {
+            @case ('doc') {
+              <div      ><img src='/assets/microsoft-word-document-icon-8.jpg' /></div>
+            }
+            @case ('link') {
+              <div      ><img src='/assets/ie6.png' /></div>
+            }
+            @case ('notepad') {
+              <div      ><img src='/assets/Icon7.png' /></div>
+            }
+            @case ('kazaa') {
+              <div      ><img src='/assets/kazaa.png' /></div>
+            }
+            @default {
+              <div             ></div>
+            }
+          }
         </div>
+        {{window.title}}
+      </div>
     </div>
+  }
 </div>

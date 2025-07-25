@@ -2,7 +2,7 @@ import { Window } from './window';
 
 export const WINDOWS: Window[] = [
     { id: 1, type: 'doc',  title: 'Resume.doc', content: 'xxx' },
-    { id: 2, type: 'link', title: 'YouTube', content: 'yyy' },
+    { id: 2, type: 'link', title: 'YouTube', content: 'yyy', cssClass: 'youtube' },
     { id: 3, type: 'notepad', title: 'Notepad', content: 'zzz' },
 
     /*{ id: 4, type: 'link', title: 'LinkedIn', content: 'yyy' },*/

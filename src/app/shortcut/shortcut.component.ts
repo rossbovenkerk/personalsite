@@ -6,9 +6,10 @@ import { WindowComponent } from '../window/window.component';
 
 
 @Component({
-  selector: 'app-shortcut',
-  templateUrl: './shortcut.component.html',
-  styleUrls: ['./shortcut.component.sass']
+    selector: 'app-shortcut',
+    templateUrl: './shortcut.component.html',
+    styleUrls: ['./shortcut.component.sass'],
+    standalone: false
 })
 export class ShortcutComponent implements OnInit {
 

@@ -9,31 +9,10 @@ import {
 } from '@angular/animations';
 
 @Component({
-  selector: 'app-taskbar',
-  templateUrl: './taskbar.component.html',
-  styleUrls: ['./taskbar.component.sass'],
-  /*
-  animations: [
-    trigger('networkActivity', [
-      state('on', style({
-        background: '/assets/network.png'
-      })),
-      state('off', style({
-        // backgroundUrl: '/assets/network.png'
-      })),
-      // state('in', style({ 'opacity': '1' })),
-      // state('out', style({ 'opacity': '0' })),
-      transition('on => off', [
-        animate('.1s')
-      ]),
-      transition('off => on', [
-        animate('0.1s')
-      ]),
-    ]),
-
-
-  ]
-  */
+    selector: 'app-taskbar',
+    templateUrl: './taskbar.component.html',
+    styleUrls: ['./taskbar.component.sass'],
+    standalone: false
 })
 
 export class TaskbarComponent implements OnInit {

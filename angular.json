@@ -70,18 +70,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "rossbovenkerk:build"
+            "buildTarget": "rossbovenkerk:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "rossbovenkerk:build:production"
+              "buildTarget": "rossbovenkerk:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "rossbovenkerk:build"
+            "buildTarget": "rossbovenkerk:build"
           }
         },
         "test": {
@@ -129,5 +129,8 @@
       }
     }
   },
-  "defaultProject": "rossbovenkerk"
+  "defaultProject": "rossbovenkerk",
+  "cli": {
+    "analytics": false
+  }
 }

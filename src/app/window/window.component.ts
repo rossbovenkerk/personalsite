@@ -13,9 +13,10 @@ declare function dragElement(param1: string): any;
 // declare function dragElement(): any;
 
 @Component({
-  selector: 'app-window',
-  templateUrl: './window.component.html',
-  styleUrls: ['./window.component.sass']
+    selector: 'app-window',
+    templateUrl: './window.component.html',
+    styleUrls: ['./window.component.sass'],
+    standalone: false
 })
 
 export class WindowComponent implements OnInit, AfterViewInit {
@@ -25,7 +26,7 @@ export class WindowComponent implements OnInit, AfterViewInit {
   selectedWindowID = 0;
 
   windowTitle: string;
-
+  cssClass: string ;
 
   // dynamicMessage = 'xxxxxxxxxxxxxxxxxxxxx';
 
@@ -46,6 +47,7 @@ export class WindowComponent implements OnInit, AfterViewInit {
   }
   constructor() {
     this.windowTitle = '';
+    this.cssClass = '';
    }
 
   // @ViewChild('window') w!: ElementRef;
@@ -56,6 +58,11 @@ export class WindowComponent implements OnInit, AfterViewInit {
     this.selectedWindow = this.windows.filter(w => w.id === this.selectedWindowID)[0];
     if (this.selectedWindow) {
       this.windowTitle = this.selectedWindow.title;
+      if(this.selectedWindow.cssClass)
+        this.cssClass = this.selectedWindow.cssClass;
+      
+      if(this.selectedWindowID === 3)
+        document.getElementById("txtNotepad")?.focus();
     }
 
 
@@ -72,11 +79,19 @@ export class WindowComponent implements OnInit, AfterViewInit {
   }
 
   onMinimize(): void {
+    if(this.cssClass !== "minimized")
+      this.cssClass = "minimized";
+    else
+      this.cssClass = "";
     console.log('min');
   }
 
   onMaximize(): void {
-    console.log('max');
+    if(this.cssClass !== "maximized")
+      this.cssClass = "maximized";
+    else
+      this.cssClass = "";
+    console.log('maximized');
   }
 
   onClose(): void {
