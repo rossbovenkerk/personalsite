@@ -52,10 +52,21 @@ export class WindowComponent implements OnInit, AfterViewInit {
 
   // @ViewChild('window') w!: ElementRef;
   ngOnInit(): void {
-    this.isWindowOpen = true;
+
+    
+
+    
 
     // get the selected window and load
     this.selectedWindow = this.windows.filter(w => w.id === this.selectedWindowID)[0];
+
+    if(this.selectedWindow.content.includes("https://"))
+    {
+      window.open(this.selectedWindow.content, "_blank");
+      return;
+    }
+
+
     if (this.selectedWindow) {
       this.windowTitle = this.selectedWindow.title;
       if(this.selectedWindow.cssClass)
@@ -65,7 +76,7 @@ export class WindowComponent implements OnInit, AfterViewInit {
         document.getElementById("txtNotepad")?.focus();
     }
 
-
+    this.isWindowOpen = true;
   }
 
   ngAfterViewInit(): void {
