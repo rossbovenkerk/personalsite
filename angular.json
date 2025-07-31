@@ -129,7 +129,7 @@
       }
     }
   },
-  "defaultProject": "rossbovenkerk",
+ 
   "cli": {
     "analytics": false
   }
