@@ -11,4 +11,9 @@ export const WINDOWS: Window[] = [
     { id: 7, type: 'link', title: 'GitHub', content: 'https://github.com/rossbovenkerk' },
 
     { id: 8, type: 'powerpoint', title: 'Case Study: Soroptimist of Phoenixville', content: 'https://docs.google.com/presentation/d/1TTmYGjG-4FAr1lc793u1CHGOhYTI8GJrdcsWHzptMHY/edit?usp=sharing' },
+    { id: 9, type: 'powerpoint', title: 'Technical SEO Experience', content: 'https://docs.google.com/presentation/d/1nIg7upSdCJLvMS6ROz9CcW-QyQ7ef-oUz7r-8G0IuCY/edit?usp=sharing' },
+
+
+
+
 ];
